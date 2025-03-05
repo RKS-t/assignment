@@ -32,10 +32,10 @@ public class Main {
                         System.out.println(num1 + " " + sign + " " + num2 + " = " + result + "입니다.");
                     }
                 } catch (IllegalArgumentException e) {
-                    System.out.println("잘못된 문자입니다.");
+                    System.out.println("잘못된 문자입니다."); //enum 요소 예외처리
                 }
             } catch (InputMismatchException n) {
-                System.out.println("숫자를 입력해주세요.");
+                System.out.println("숫자를 입력해주세요."); //숫자가 아닌 다른 문자 입력받을 때 예외 처리
                 value.nextLine();//줄바꿈제거
             }
 

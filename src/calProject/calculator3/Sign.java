@@ -41,7 +41,7 @@ enum SignCal {
                 return change;
             }
         }
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException(); //enum 에 등록된 요소가 아니면 예외처리
     }
 
 }
