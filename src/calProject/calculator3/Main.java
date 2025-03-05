@@ -54,16 +54,8 @@ public class Main {
             System.out.print("계산 내역을 출력하시겠습니까? 출력을 원하시면 y를 누르세요: ");
             String historyYN = value.nextLine();
             if (historyYN.equals("y")) {
-                //향상된 for문 사용하여 history 읽기
-                for (ArithmeticCalculator data : historyList) {
-                //객체 내 정보 가져오기
-                    Number result = data.getResult();
-                    Number num1 = data.getNum1();
-                    Number num2 = data.getNum2();
-                    String sign = data.getSign();
-
-                    System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
-                }
+                //어나운스 매소드 불러오기
+                cal.announce(historyList);
                 //삭제 반복문
                 while (true) {
                     System.out.print("가장 오래된 계산 내역을 삭제하시겠습니까? 삭제하고 싶으시면 'y' 를 눌러주세요. 다른키를 누르면 종료됩니다.: ");
@@ -75,21 +67,14 @@ public class Main {
                             List<ArithmeticCalculator> reHistoryList = historyList.stream().skip(1).collect(Collectors.toList());
                             cal.setData(reHistoryList);
 
-                           //게터로 다시 가져오기
-                           historyList = cal.getData();
+                            //게터로 다시 가져오기
+                            historyList = cal.getData();
 
-                           //삭제 후 히스토리 읽기
-                            for (ArithmeticCalculator data : historyList) {
-                                Number reResult = data.getResult();
-                                Number reNum1 = data.getNum1();
-                                Number reNum2 = data.getNum2();
-                                String reSign = data.getSign();
-
-                                System.out.println(reNum1 + " " + reSign + " " + reNum2 + " = " + reResult);
-
-                            }
+                            //삭제 후 히스토리 읽기
+                            cal.announce(historyList);
                         } else {
-                        break;
+                            System.out.println("계산기를 종료합니다.");
+                            break;
                         }
                     } catch (IllegalStateException n) { //Calculator 클래스에서 발생한 예외 처리
                         System.out.println("더 이상 삭제 할 수 없습니다. 계산기를 종료합니다.");
