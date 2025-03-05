@@ -6,8 +6,9 @@
 
 * 프로젝트를 통해 자바 문법에 대한 이해와 실력 향상 목표
 
-### Stacks
 ---
+### Stacks
+
 Environoment
 
  <img src="https://img.shields.io/badge/Intellij-000000?style=for-the-badge&logo=IntelliJ IDEA&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> 
@@ -33,6 +34,19 @@ Communication
 * calculator2, calculator3의 경우 계산내역 출력 기능 지원
 
 * 계산내역 출력시 가장 오래된 계산 내역부터 삭제하여 계산내역을 다시 보여줄 수 있음
+  
+---
+### 이 코드의 특징(Calculator3 기준)
+
+* Enum과 람다식을 복합 활용하여 후에 새로운 연산식을 추가하기 매우 용이하고 표현이 간결해짐
+
+* 캡슐화를 통해서 계산 내역 데이터를 안전하게 취급
+
+* 스트림을 이용하여 리스트의 제거 과정을 간편히 함
+
+* 제네릭으로 입력타입에 상관없이 계산기능 수행 (잘못된 문자 입력시에는 예외처리)
+
+---
 
 
 ### 디렉토리
