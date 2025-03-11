@@ -3,7 +3,7 @@ package calProject.calculator3;
 
 
 
-enum SignCal {
+enum SignCalculator {
     ADD("+", (num1, num2)-> num1.doubleValue() + num2.doubleValue()),
     SUB("-", (num1, num2)-> num1.doubleValue() - num2.doubleValue()),
     MUL("*", (num1, num2)-> num1.doubleValue() * num2.doubleValue()),
@@ -16,7 +16,7 @@ enum SignCal {
 
 
     //생성자
-    SignCal(String sign, Calculator calculator) {
+    SignCalculator(String sign, Calculator calculator) {
         this.sign = sign;
         this.calculator = calculator;
     }
@@ -27,7 +27,7 @@ enum SignCal {
     }
 
     //람다식 연산 실행
-    public Number cal(Number a, Number b) {
+    public Number signCalculate(Number a, Number b) {
         return calculator.cal(a, b);
     }
 
@@ -35,8 +35,8 @@ enum SignCal {
 
 
     // 연산기호를 Enum으로 변환
-    public static SignCal fromSign(String sign) {
-        for (SignCal change : SignCal.values()) {
+    public static SignCalculator fromSign(String sign) {
+        for (SignCalculator change : SignCalculator.values()) {
             if (change.sign.equals(sign)) {
                 return change;
             }
