@@ -26,6 +26,7 @@ public class Main {
             }catch (InputMismatchException e) {
                 System.out.println("올바른 숫자가 아닙니다."); // 잘못된 숫자가 입력되었을 때 예외 처리
                 value.nextLine();
+                continue;
             }
 
 
@@ -49,6 +50,7 @@ public class Main {
                     }
                 } else {
                     System.out.println("잘못된 문자입니다.");
+                    continue;
                 }
 
             System.out.print("계산기 종료를 원하시면 'exit'를 아니면 아무키나 입력해주세요.: ");

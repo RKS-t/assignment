@@ -11,7 +11,8 @@ public class Main {
         //인스턴스화
         ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator( );
         //계산 반복
-        while (true) {
+        String exit = null ;
+        while (!"exit".equals(exit)) {
             try {
                 System.out.print("첫번째 수를 입력해주세요: ");
                 Number num1 = value.nextDouble();
@@ -33,16 +34,16 @@ public class Main {
 
             } catch (InputMismatchException n) {
                 System.out.println("숫자를 입력해주세요."); //숫자가 아닌 다른 문자 입력받을 때 예외 처리
-                value.nextLine();//줄바꿈제거
+                value.nextLine();
+                continue;//줄바꿈제거
             } catch (IllegalArgumentException e) {
-                System.out.println("잘못된 문자입니다.");//enum 요소 예외처리
+                System.out.println("잘못된 문자입니다.");
+                continue;//enum 요소 예외처리
             }
 
             System.out.print("계산기 종료를 원하시면 'exit'를 아니면 아무키나 입력해주세요. 다른키를 누르면 종료됩니다.: ");
-            String exit = value.nextLine();
-            if (exit.equals("exit")) {
-                break;
-            }
+            exit = value.nextLine();
+
         }
         //컬렉션 정보 가져오기
         List<SaveData> historyList = arithmeticCalculator.getData();

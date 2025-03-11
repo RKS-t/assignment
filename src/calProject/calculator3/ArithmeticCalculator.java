@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class  ArithmeticCalculator {
+public class  ArithmeticCalculator <T extends Number> {
 
     //속성 변수 선언
     //계산 과정을 저장하는 객체 컬렉션 추가 (캡슐화)
@@ -22,7 +22,7 @@ public class  ArithmeticCalculator {
 
     //함수
     //입력된 변수를 Enem 에 적용하여 값을 반환하는 함수 생성
-    public Number calculate(Number num1, Number num2, String sign){
+    public Number calculate(T num1, T num2, String sign){
         SignCalculator changeSign = SignCalculator.fromSign(sign); //sign 문자를 Enum상수로 변환
         Number result = changeSign.signCalculate(num1, num2);// 계산
         calData.add(new SaveData(num1, num2, sign, result));//데이터 저장
